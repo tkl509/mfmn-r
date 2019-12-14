@@ -1,25 +1,26 @@
 import React from 'react';
-import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-function RenderDirectoryItem({campsite}) {
+function RenderDirectoryItem({horse}) {
     return (
         <Card>
-            <Link to={`/directory/${campsite.id}`}>
-                <CardImg width="100%" src={campsite.image} alt={campsite.name} />
-                    <CardImgOverlay>
-                        <CardTitle>{campsite.name}</CardTitle>
-                    </CardImgOverlay>
+            <Link to={`/directory/${horse.id}`}>
+                <CardImg width="100%" src={horse.image} alt={horse.name} />
+{/*                    <CardImgOverlay> */}
+                        <CardTitle>{horse.name}</CardTitle>
+ {/*                   </CardImgOverlay>
+*/}
             </Link>
         </Card>
             );
     }
 
 function Directory(props) {
-    const directory = props.campsites.map(campsite => {
+    const directory = props.horses.map(horse => {
         return(
-            <div key={campsite.id} className="col-md-5 m-1">
-                <RenderDirectoryItem campsite={campsite} />
+            <div key={horse.id} className="col-md-5 m-1">
+                <RenderDirectoryItem horse={horse} />
             </div>
         );
     });
@@ -28,10 +29,6 @@ function Directory(props) {
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <Breadcrumb>
-                        <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
-                        <BreadcrumbItem active>Directory</BreadcrumbItem>
-                    </Breadcrumb>
                     <h2>Directory</h2>
                     <hr />
                 </div>

@@ -3,16 +3,23 @@ body {
 }
 
 h1, h2, h3, .card-body>h5 {
-  font-family: "Lobster", cursive;
+  font-family: "GFS-Didot", serif;
+  font-style: italic;
 }
 
 h2 {
-  color: #3046C4;
+  color: #93701F;
 }
 
+/*
 .card-img-overlay h5 {
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
+}
+*/
+
+.card-title {
+  color: black;
 }
 
 .row-content {
@@ -22,21 +29,29 @@ h2 {
 }
 
 .site-footer {
-  background-image: linear-gradient(#CEC8FF, white);
+  background-image: linear-gradient(#B5B57B, white);
   padding: 20px 0;
+}
+
+.site-footer a {
+  color: #4F1B05;
 }
 
 .jumbotron {
   margin: 0;
   padding: 30px;
-  background-image: linear-gradient(to right, #5637DD, #3046C5, #601068);
-  color: white;
+  background-image: linear-gradient(to right,#4F1B05, #B5B57B);
+  color: #EAD38D;
 }
 
 .jumbotron h2 {
-  color: #CEC8FF;
+  color: #EAD38D;
 }
 
 .navbar-dark {
-  background-color: #901CAD;
+  background-color: #353502;
+}
+
+.contact-link a {
+  color: #4F1B05;
 }

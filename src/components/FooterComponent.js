@@ -11,8 +11,8 @@ function Footer(props) {
                         <ul className="list-unstyled">
                             <li><Link to='/home'>Home</Link></li>
                             <li><Link to='/directory'>Directory</Link></li>
-                            <li><Link to='/aboutus'>About</Link></li>
-                            <li><Link to='/contactus'>Contact</Link></li>
+                            <li><Link to='/aboutus'>About Us</Link></li>
+                            <li><Link to='/contactus'>Contact Us</Link></li>
                         </ul>
                     </div>
                     <div className="col-6 col-sm-3 text-center">
@@ -23,8 +23,8 @@ function Footer(props) {
                         <a className="btn btn-social-icon btn-google" href="http://youtube.com/"><i className="fa fa-youtube" /></a> 
                     </div>
                     <div className="col-sm-4 text-center">
-                        <a role="button" className="btn btn-link" href="tel:+12065551234"><i className="fa fa-phone" /> 1-206-555-1234</a><br />
-                        <a role="button" className="btn btn-link" href="mailto:notreal@notreal.co"><i className="fa fa-envelope-o" /> campsites@nucamp.co</a>
+                        <a role="button" className="btn btn-link" href="tel:+15735551234"><i className="fa fa-phone" /> 1-573-555-1234</a><br />
+                        <a role="button" className="btn btn-link" href="mailto:notreal@notreal.co"><i className="fa fa-envelope-o" /> info@mfmn.mmm</a>
                     </div>
                 </div>
             </div>
