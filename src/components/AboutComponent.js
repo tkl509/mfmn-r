@@ -18,7 +18,7 @@ function About(props) {
                 </div>
                 <div className="col-sm-6">
                     <Card>
-                        <CardHeader className="bg-secondary text-white"><h3>Rescue At a Glance</h3></CardHeader>
+                        <CardHeader className="bg-success text-white"><h3>Rescue At a Glance</h3></CardHeader>
                         <CardBody>
                             <dl className="row">
                                 <dt className="col-6">Founded</dt>

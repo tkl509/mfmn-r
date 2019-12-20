@@ -5,7 +5,7 @@ function RenderHorse({horse}) {
     return (
         <div className="col-md-5 m-1">
             <Card>
-                <CardImg top src={horse.image} alt={horse.name} />
+                <CardImg top src={horse.image2} alt={horse.name} />
                 <CardBody>
                     <CardText>{horse.description}</CardText>
                 </CardBody>

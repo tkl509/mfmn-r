@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
+import { Card, CardImg, CardTitle } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 function RenderDirectoryItem({horse}) {
@@ -7,10 +7,7 @@ function RenderDirectoryItem({horse}) {
         <Card>
             <Link to={`/directory/${horse.id}`}>
                 <CardImg width="100%" src={horse.image} alt={horse.name} />
-{/*                    <CardImgOverlay> */}
                         <CardTitle>{horse.name}</CardTitle>
- {/*                   </CardImgOverlay>
-*/}
             </Link>
         </Card>
             );
@@ -29,7 +26,7 @@ function Directory(props) {
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <h2>Directory</h2>
+                    <h2>Horses</h2>
                     <hr />
                 </div>
             </div>

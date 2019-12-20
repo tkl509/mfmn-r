@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, Jumbotron } from 'reactstrap';
+import { Nav, Navbar, NavbarToggler, Collapse, NavItem, Jumbotron, Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Input, Label } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
@@ -8,8 +8,12 @@ class Header extends Component {
         super(props);
 
         this.toggleNav = this.toggleNav.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
+        this.handleDonate = this.handleDonate.bind(this);
+
         this.state = {
-            isNavOpen: false
+            isNavOpen: false,
+            isModalOpen: false
         };
     }
 
@@ -17,6 +21,18 @@ class Header extends Component {
         this.setState({
             isNavOpen: !this.state.isNavOpen
         });
+    }
+
+    toggleModal() {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+        });
+    }
+
+    handleDonate(event) {
+        alert(`Firstname: ${this.firstName.value} Lastname: ${this.LastName.value} Remember: ${this.amount.value}`);
+        this.toggleModal();
+        event.preventDefault();
     }
 
     render() {
@@ -29,9 +45,39 @@ class Header extends Component {
                                 <h1>MFMN</h1>
                                 <h2>Horse Rescue & Santuary</h2>
                             </div>
+                            <div className="col-md-4 col-xl-2">
+                                <Button  color="warning" size="large" onClick={this.toggleModal}>Donate</Button>
+                            </div>
                         </div>
                     </div>
                 </Jumbotron>
+
+                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                    <ModalHeader toggle={this.toggleModal}>Make a Donation</ModalHeader>
+                    <ModalBody>
+						<Form onSubmit={this.handleDonate}>
+                            <FormGroup>
+                                <Label htmlFor="firstName">First Name</Label>
+                                <Input type="text" id="firstName" name="firstName"
+                                    innerRef={input => this.firstName = input} />
+                            </FormGroup>
+
+                            <FormGroup>
+                                <Label htmlFor="lastName">Last Name</Label>
+                                <Input type="text" id="lastName" name="lastName"
+                                    innerRef={input => this.lastName = input} />
+                            </FormGroup>
+
+                            <FormGroup>
+                                <Label htmlFor="amount">Amount</Label>
+                                <Input type="text" id="amount" name="amount"
+                                    innerRef={input => this.amount = input} />
+                            </FormGroup>
+                            <Button type="submit" value="submit" color="success">Donate</Button>
+                      </Form>
+                    </ModalBody>
+                </Modal>
+
                 <Navbar dark sticky="top" expand="md">
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
@@ -44,7 +90,7 @@ class Header extends Component {
                                 </NavItem>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/directory">
-                                        <i className="fa fa-list fa-lg" /> Directory
+                                        <i className="fa fa-list fa-lg" /> Horses
                                     </NavLink>
                                 </NavItem>
                                <NavItem>
